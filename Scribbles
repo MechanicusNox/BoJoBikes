@@ -1,0 +1,16 @@
+nouns:
+  bike
+  docking station
+  person
+
+verbs:
+  use
+  release
+  see
+
+
+  [3] pry(main)> dock_sta = DockingStation.new
+  NameError: uninitialized constant DockingStation
+  from (pry):3:in `__pry__'
+
+Error occurred due to no class called DockingStation, can be solved by creating one
