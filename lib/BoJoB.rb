@@ -1,8 +1,44 @@
 
 class DockingStation
+  attr_reader :docked, :DEFAULT_CAPACITY
+
+  def initialize(capacity = 20)
+    @docked = Array.new
+    @DEFAULT_CAPACITY = capacity
+  end
 
   def release_bike
-    Bike.new
+    if empty? == false
+      @docked.pop
+    else
+      raise("No bike at station.")
+    end
+  end
+
+  def dock_bike(bike)
+    if full? != true
+      @docked.push(bike)
+    else
+      raise("Station is full.")
+    end
+  end
+
+  private
+
+  def full?
+    if @docked.count >= @DEFAULT_CAPACITY
+      true
+    else
+      false
+    end
+  end
+
+  def empty?
+    if @docked.count != 0
+      false
+    else
+      true
+    end
   end
 
 end
