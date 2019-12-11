@@ -51,6 +51,6 @@ describe DockingStation do
   end
 
   it "has a default capacity of 20" do
-    expect(DockingStation.new.DEFAULT_CAPACITY).to eq(20)
+    expect(DockingStation.new.capacity).to eq(20)
   end
 end

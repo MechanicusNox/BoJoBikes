@@ -1,10 +1,10 @@
 
 class DockingStation
-  attr_reader :docked, :DEFAULT_CAPACITY
+  attr_reader :docked, :capacity
 
   def initialize(capacity = 20)
     @docked = Array.new
-    @DEFAULT_CAPACITY = capacity
+    @capacity = capacity
   end
 
   def release_bike
@@ -26,7 +26,7 @@ class DockingStation
   private
 
   def full?
-    if @docked.count >= @DEFAULT_CAPACITY
+    if @docked.count >= @capacity
       true
     else
       false
